@@ -1516,3 +1516,338 @@ ul {
     }
 }
 
+
+/* =============================================
+   KATA SAMBUTAN KEPALA SEKOLAH
+============================================= */
+.sambutan-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sambutan-foto-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kepsek-photo-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.kepsek-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 20px;
+    border: 3px solid rgba(52, 211, 153, 0.4);
+    box-shadow: 0 20px 50px rgba(5, 150, 105, 0.35);
+    display: block;
+    transition: var(--transition);
+}
+
+.kepsek-photo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 28px 60px rgba(5, 150, 105, 0.5);
+}
+
+.kepsek-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 20px;
+    border: 3px dashed rgba(52, 211, 153, 0.4);
+    background: rgba(16, 185, 129, 0.08);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--primary-light);
+    font-size: 5rem;
+}
+
+.kepsek-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #047857, #065F46);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.4);
+    z-index: 2;
+}
+
+.badge-title {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+
+.badge-name {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+}
+
+.kepsek-ornament {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.orn-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.orn-1 {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-light);
+    top: -20px;
+    right: -20px;
+    filter: blur(20px);
+    animation: float 6s ease-in-out infinite;
+}
+
+.orn-2 {
+    width: 60px;
+    height: 60px;
+    background: var(--secondary);
+    bottom: 20px;
+    left: -20px;
+    filter: blur(16px);
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+.sambutan-text-col {
+    position: relative;
+    padding: 2.5rem !important;
+}
+
+.sambutan-quote-mark {
+    font-size: 4rem;
+    color: var(--primary-light);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.sambutan-text-col h3 {
+    font-size: 1.35rem;
+    color: var(--primary-light);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.sambutan-text-col p {
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+    font-size: 0.97rem;
+}
+
+.sambutan-ttd {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.ttd-kota {
+    font-size: 0.88rem !important;
+    color: var(--text-muted) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.ttd-nama {
+    font-size: 1.1rem !important;
+    color: white !important;
+    margin-bottom: 0.25rem !important;
+}
+
+.ttd-jabatan {
+    font-size: 0.88rem !important;
+    color: var(--primary-light) !important;
+    margin-bottom: 0 !important;
+}
+
+/* =============================================
+   TIM PENDIDIK / FOTO GURU
+============================================= */
+.guru-photo-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(5, 150, 105, 0.3);
+    border: 2px solid rgba(52, 211, 153, 0.25);
+}
+
+.guru-group-photo {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.guru-photo-wrapper:hover .guru-group-photo {
+    transform: scale(1.03);
+}
+
+.guru-placeholder {
+    width: 100%;
+    height: 420px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(16, 185, 129, 0.08);
+    border: 2px dashed rgba(52, 211, 153, 0.35);
+    border-radius: 20px;
+    color: var(--primary-light);
+}
+
+.guru-placeholder i { font-size: 4rem; opacity: 0.5; }
+.guru-placeholder p { font-size: 1.2rem; font-weight: 600; }
+.guru-placeholder small { color: var(--text-muted); font-size: 0.85rem; }
+.guru-placeholder code {
+    background: rgba(52, 211, 153, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-family: monospace;
+}
+
+.guru-photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(to top, rgba(9, 32, 22, 0.95), transparent);
+}
+
+.guru-photo-overlay .guru-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.guru-photo-overlay .guru-stat i {
+    color: var(--primary-light);
+    font-size: 1.3rem;
+}
+
+.guru-stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.guru-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    transition: var(--transition);
+}
+
+.guru-stat-item:hover {
+    background: rgba(5, 150, 105, 0.18);
+    border-color: rgba(52, 211, 153, 0.5);
+    transform: translateY(-4px);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.stat-info strong {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    color: white;
+}
+
+.stat-info span {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .sambutan-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .kepsek-photo-wrapper {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .sambutan-foto-col {
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .guru-group-photo,
+    .guru-placeholder {
+        height: 260px;
+    }
+
+    .guru-stats-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sambutan-text-col h3 {
+        font-size: 1.1rem;
+    }
+}
